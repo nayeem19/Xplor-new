@@ -1,0 +1,15 @@
+<%= simple_form_for([@apt, @apt.reviews.build]) do |f| %>
+    <div id="rating-form">
+        <%= f.input :rating %>
+    </div>
+    <%= f.input :rating %>
+    <%= f.input :comment %>
+    <%= f.button :submit %>
+<% end %>
+
+<script>
+    $('#review-rating').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
+    });
+</script>

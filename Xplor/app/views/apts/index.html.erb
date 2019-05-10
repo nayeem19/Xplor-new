@@ -1,0 +1,25 @@
+<h1 class="current-category"><%= params[:category] %></h1>
+
+<% if @apts.count == 0 %>
+
+	<h1>There are no posts currently in this category</h1>
+
+<% else %>	
+
+	<div class="row">
+
+		<% @apts.each do |apt| %>
+
+			<div class="col-md-3">
+				<a href="/apts/<%= apt.id %>">
+					<%= image_tag apt.apt_img.url(:apt_index), class: "apt" %>
+				</a>
+			</div>	
+
+		<% end %>
+
+	</div>
+	
+<% end %>	
+
+<%= link_to "Add Apt", new_apt_path %>
